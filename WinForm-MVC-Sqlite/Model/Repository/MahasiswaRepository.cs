@@ -46,8 +46,7 @@ namespace WinForm_MVC_Sqlite.Model.Repository
         {
             int result = 0;
 
-            string sql = @"update mahasiswa set nama = @nama, jurusan = @jurusan
-                           where nim = @nim";
+            string sql = @"update mahasiswa set nama = @nama, jurusan = @jurusan where nim = @nim";
 
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {

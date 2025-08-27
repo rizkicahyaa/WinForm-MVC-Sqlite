@@ -48,6 +48,8 @@ namespace WinForm_MVC_Sqlite.View
             txtNim.Text = mhs.Nim;
             txtNama.Text = mhs.Nama;
             txtJurusan.Text = mhs.Jurusan;
+
+            txtNim.Enabled = false;
         }
 
         private void FrmEntryMahasiswa_Load(object sender, EventArgs e)
