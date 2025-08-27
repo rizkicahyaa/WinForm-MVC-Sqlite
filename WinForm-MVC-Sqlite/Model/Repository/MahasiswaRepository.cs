@@ -22,11 +22,11 @@ namespace WinForm_MVC_Sqlite.Model.Repository
         public int Create(Mahasiswa mhs)
         {
             int result = 0;
-            string sql = @"insert into mahasiswa (npm, nama, angkatan) values (@npm, @nama, @angkatan)";
+            string sql = @"insert into mahasiswa (nim, nama, jurusan) values (@nim, @nama, @jurusan)";
             
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                cmd.Parameters.AddWithValue("@npm", mhs.Nim);
+                cmd.Parameters.AddWithValue("@nim", mhs.Nim);
                 cmd.Parameters.AddWithValue("@nama", mhs.Nama);
                 cmd.Parameters.AddWithValue("@jurusan", mhs.Jurusan);
                 try
@@ -46,8 +46,8 @@ namespace WinForm_MVC_Sqlite.Model.Repository
         {
             int result = 0;
 
-            string sql = @"update mahasiswa set nama = @nama, angkatan = @angkatan
-                           where npm = @npm";
+            string sql = @"update mahasiswa set nama = @nama, jurusan = @jurusan
+                           where nim = @nim";
 
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
@@ -98,7 +98,7 @@ namespace WinForm_MVC_Sqlite.Model.Repository
 
             try
             {
-                string sql = @"select npm, nama, angkatan 
+                string sql = @"select nim, nama, jurusan
                                from mahasiswa 
                                order by nama";
 
@@ -132,7 +132,7 @@ namespace WinForm_MVC_Sqlite.Model.Repository
 
             try
             {
-                string sql = @"select npm, nama, angkatan 
+                string sql = @"select nim, nama, jurusan
                                from mahasiswa 
                                where nama like @nama
                                order by nama";

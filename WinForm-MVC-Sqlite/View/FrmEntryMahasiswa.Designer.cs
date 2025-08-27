@@ -94,6 +94,7 @@
             this.btnSimpan.TabIndex = 6;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = true;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // btnSelesai
             // 
@@ -103,6 +104,7 @@
             this.btnSelesai.TabIndex = 7;
             this.btnSelesai.Text = "Selesai";
             this.btnSelesai.UseVisualStyleBackColor = true;
+            this.btnSelesai.Click += new System.EventHandler(this.btnSelesai_Click);
             // 
             // FrmEntryMahasiswa
             // 
@@ -118,6 +120,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmEntryMahasiswa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEntryMahasiswa";
             this.Load += new System.EventHandler(this.FrmEntryMahasiswa_Load);
             this.ResumeLayout(false);

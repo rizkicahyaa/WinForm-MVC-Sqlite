@@ -81,6 +81,7 @@
             this.btnTambah.TabIndex = 4;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // btnPerbaiki
             // 
@@ -90,6 +91,7 @@
             this.btnPerbaiki.TabIndex = 5;
             this.btnPerbaiki.Text = "Perbaiki";
             this.btnPerbaiki.UseVisualStyleBackColor = true;
+            this.btnPerbaiki.Click += new System.EventHandler(this.btnPerbaiki_Click);
             // 
             // btnHapus
             // 
@@ -99,6 +101,7 @@
             this.btnHapus.TabIndex = 6;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnSelesai
             // 
@@ -108,6 +111,7 @@
             this.btnSelesai.TabIndex = 7;
             this.btnSelesai.Text = "Selesai";
             this.btnSelesai.UseVisualStyleBackColor = true;
+            this.btnSelesai.Click += new System.EventHandler(this.btnSelesai_Click);
             // 
             // FrmMahasiswa
             // 
@@ -122,6 +126,7 @@
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMahasiswa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

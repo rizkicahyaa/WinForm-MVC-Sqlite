@@ -33,9 +33,63 @@ namespace WinForm_MVC_Sqlite.View
             InitializeComponent();
         }
 
+        public FrmEntryMahasiswa(string title, MahasiswaController controller) : this()
+        {
+            this.Text = title;
+            this.controller = controller;
+        }
+
+        public FrmEntryMahasiswa(string title, Mahasiswa obj, MahasiswaController controller) : this()
+        {
+            this.Text = title;
+            this.controller = controller;
+            isNewData = false; 
+            mhs = obj; 
+            txtNim.Text = mhs.Nim;
+            txtNama.Text = mhs.Nama;
+            txtJurusan.Text = mhs.Jurusan;
+        }
+
         private void FrmEntryMahasiswa_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            if (isNewData) mhs = new Mahasiswa();
+            mhs.Nim = txtNim.Text;
+            mhs.Nama = txtNama.Text;
+            mhs.Jurusan = txtJurusan.Text;
+            int result = 0;
+
+            if (isNewData) 
+            {
+                result = controller.Create(mhs);
+                if (result > 0) 
+                {
+                    OnCreate(mhs);
+                    txtNim.Clear();
+                    txtNama.Clear();
+                    txtJurusan.Clear();
+                    txtNim.Focus();
+                }
+            }
+            else
+            {
+                result = controller.Update(mhs);
+
+                if (result > 0)
+                {
+                    OnUpdate(mhs);
+                    this.Close();
+                }
+            }
+        }
+
+        private void btnSelesai_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
