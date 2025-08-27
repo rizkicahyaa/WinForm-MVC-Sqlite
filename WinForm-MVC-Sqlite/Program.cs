@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForm_MVC_Sqlite.View;
 
 namespace WinForm_MVC_Sqlite
 {
@@ -16,7 +17,7 @@ namespace WinForm_MVC_Sqlite
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmMahasiswa());
         }
     }
 }

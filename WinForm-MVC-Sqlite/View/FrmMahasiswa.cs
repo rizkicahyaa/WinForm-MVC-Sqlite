@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinForm_MVC_Sqlite
+namespace WinForm_MVC_Sqlite.View
 {
-    public partial class Form1 : Form
+    public partial class FrmMahasiswa : Form
     {
-        public Form1()
+        public FrmMahasiswa()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
