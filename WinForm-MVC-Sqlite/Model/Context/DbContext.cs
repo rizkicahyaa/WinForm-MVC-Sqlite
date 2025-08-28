@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
 using System.Data;
 using System.Data.SQLite;
 
@@ -24,7 +25,7 @@ namespace WinForm_MVC_Sqlite.Model.Context
 
             try
             {
-                string dbName = @"D:\WinForm Project\WinForm-MVC-Sqlite\Database\DbMahasiswa.db";
+                string dbName = Directory.GetCurrentDirectory() + @"\Database\DbMahasiswa.db";
                 string connectionString = string.Format("Data Source={0};FailIfMissing=True", dbName);
 
                 conn = new SQLiteConnection(connectionString);
